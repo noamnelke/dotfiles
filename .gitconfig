@@ -1,0 +1,50 @@
+[user]
+	name = Noam Nelke
+	email = Noam@BillGuard.com
+[github]
+	user = noam@billguard.com
+[alias]
+        lol = log --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
+        st = status
+        sl = stash list
+        ss = stash save --include-untracked
+        sp = stash pop
+        co = checkout
+        df = diff
+    	unpushed = !BRANCH=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3) && git lol origin/$BRANCH..$BRANCH
+    	todeploy = !git lol origin/staging..origin/master
+	d = difftool
+	unstage = reset HEAD --
+	aa = add --all
+	rh = reset HEAD
+[color]
+        ui = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+
+[push]
+	default = tracking
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[core]
+	excludesfile = /Users/noamnelke/.gitignore_global
+	pager = less -F -X
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
