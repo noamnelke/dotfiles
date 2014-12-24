@@ -46,7 +46,7 @@ export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 #virtualenv stuff
 export WORKON_HOME=~/virtualenvs
 mkdir -p $WORKON_HOME
-source /usr/local/share/python/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 #end virtualenv stuff
 
 # Android stuff
