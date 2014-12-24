@@ -1,0 +1,12 @@
+alias runGuardian="workon guardian && python manage.py runserver"
+alias runTxnPages="workon txn_pages && python manage.py runserver 9191"
+alias runNotebook="ssh hq -L 33333:127.0.0.1:8888 -N"
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d ' ' -f2"
+alias migrate="mysql -u root -proot crowdspot <"
+alias pubkey="cat ~/.ssh/id_rsa.pub | tr -d '\n' | pbcopy && cat ~/.ssh/id_rsa.pub && echo -e '\e[0;34m-- Copied to clipboard! --\e[0m'"
+
+# Copy last downloaded file to current location
+alias dl='LAST_DL=$(ls -t ~/Downloads | head -1); echo $LAST_DL; mv ~/Downloads/$LAST_DL .'
+
+alias xconsole="workon xconsole && git pull && python console.py"
+alias biggest_stuff="cd / && du -k | sort -nr | less"
