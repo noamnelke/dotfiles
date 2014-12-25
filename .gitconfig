@@ -1,6 +1,6 @@
 [user]
 	name = Noam Nelke
-	email = Noam@BillGuard.com
+	email = noam@billguard.com
 [github]
 	user = noam@billguard.com
 [alias]
@@ -40,7 +40,7 @@
 [difftool]
 	prompt = false
 [core]
-	excludesfile = /Users/noamnelke/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	pager = less -F -X
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
