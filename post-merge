@@ -1,0 +1,11 @@
+#!/bin/bash
+REGEX=".*\.sql"
+if [[ `git diff --name-only HEAD@{1} HEAD` =~ $REGEX ]]
+then
+	echo
+	echo "$(tput setaf 1)>>>>>> New migration! <<<<<<$(tput sgr0)"
+	echo
+	echo Run this:
+	ESCAPED_REGEX=$(echo $REGEX | sed 's/\//\\\//g')
+	git diff --name-only HEAD@{1} HEAD | sed -n 's/'"$ESCAPED_REGEX"'/migrate &/p'
+fi
