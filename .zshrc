@@ -38,7 +38,7 @@ plugins=(git osx brew autojump django history-substring-search pip python)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
 
 # Disable shared history across sessions
 # unsetopt SHARE_HISTORY
@@ -50,7 +50,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 #end virtualenv stuff
 
 # Android stuff
-# export ANDROID_HOME=/usr/local/opt/android-sdk # moved to /etc/launchd.conf
+export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.0.1/
 # end Android stuff
 
 # Maven
