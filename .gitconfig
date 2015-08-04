@@ -5,7 +5,7 @@
 	user = noam@billguard.com
 [alias]
         lol = log --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
-        st = status
+        st = status -sb
         sl = stash list
         ss = stash save --include-untracked
         sp = stash pop
