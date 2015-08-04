@@ -1,6 +1,4 @@
-alias runGuardian="workon guardian && python manage.py runserver"
-alias runTxnPages="workon txn_pages && python manage.py runserver 9191"
-alias runNotebook="ssh guardian -L 33333:127.0.0.1:8888 -N"
+alias runNotebook="ssh guardian -L 33333:127.0.0.1:8888 -N & sleep 2 && open http://localhost:33333"
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d ' ' -f2"
 alias migrate="mysql -u root -proot crowdspot <"
 alias pubkey="cat ~/.ssh/id_rsa.pub | tr -d '\n' | pbcopy && cat ~/.ssh/id_rsa.pub && echo -e '\e[0;34m-- Copied to clipboard! --\e[0m'"
@@ -11,3 +9,4 @@ alias dl='LAST_DL=$(ls -t ~/Downloads | head -1); echo $LAST_DL; mv ~/Downloads/
 alias xconsole="workon xconsole && git pull && python console.py"
 alias biggest_stuff="cd / && du -k | sort -nr | less"
 alias w="workon"
+alias curl='noglob curl' # this is to prevent interpreting the "?" char in urls as a wildcard
