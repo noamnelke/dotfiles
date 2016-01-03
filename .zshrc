@@ -33,7 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew brew-cask autojump django history-substring-search pip python per-directory-history sudo)
+plugins=(git osx brew brew-cask autojump django history-substring-search pip python per-directory-history sudo mvn)
 
 source $ZSH/oh-my-zsh.sh
 
