@@ -78,3 +78,8 @@ cdp() {
     cd "$PROJECTS_HOME/$1"
 }
 complete -F _cdp_opts -o filenames cdp
+
+# list TODOs in current branch (that are not in master), see https://github.com/yonilevy/branchtodo
+branchtodo() {
+    $WORKON_HOME/branchtodo/bin/python ~/code/branchtodo/branchtodo.py
+}
