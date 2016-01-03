@@ -1,4 +1,4 @@
-alias runNotebook="ssh guardian -L 33333:127.0.0.1:8888 -N & sleep 3 && open http://localhost:33333"
+alias runNotebook="ssh guardian -L 33333:127.0.0.1:8888 -N & sleep 3 && open http://localhost:33333 && fg"
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d ' ' -f2"
 alias migrate="mysql -u root -proot crowdspot <"
 alias pubkey="cat ~/.ssh/id_rsa.pub | tr -d '\n' | pbcopy && cat ~/.ssh/id_rsa.pub && echo -e '\e[0;34m-- Copied to clipboard! --\e[0m'"
