@@ -5,7 +5,8 @@ then
 	echo
 	echo "$(tput setaf 1)>>>>>> New migration! <<<<<<$(tput sgr0)"
 	echo
-	echo Run this:
+	echo "Run this (it's in your clipboard):"
 	ESCAPED_REGEX=$(echo $REGEX | sed 's/\//\\\//g')
 	git diff --name-only HEAD@{1} HEAD | sed -n 's/'"$ESCAPED_REGEX"'/migrate &/p'
+	git diff --name-only HEAD@{1} HEAD | sed -n 's/'"$ESCAPED_REGEX"'/migrate &/p' | pbcopy
 fi
