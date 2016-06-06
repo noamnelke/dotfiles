@@ -83,3 +83,8 @@ complete -F _cdp_opts -o filenames cdp
 branchtodo() {
     $WORKON_HOME/branchtodo/bin/python ~/code/branchtodo/branchtodo.py
 }
+
+# BillGuard shared bashrc
+source /Users/noam/code/config/bash/bashrc_billguard.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
