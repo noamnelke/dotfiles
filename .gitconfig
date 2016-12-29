@@ -1,8 +1,8 @@
 [user]
 	name = Noam Nelke
-	email = noam@billguard.com
+	email = noamnelke@gmail.com
 [github]
-	user = noam@billguard.com
+	user = noamnelke@gmail.com
 [alias]
         lol = log --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
         st = status -sb
