@@ -86,3 +86,4 @@ branchtodo() {
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PYTHONPATH=$PYTHONPATH:/Users/noamnelke/Projects/Tapingo
