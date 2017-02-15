@@ -36,8 +36,8 @@ prompt_status() {
 }
 
 prompt_arrow() {
-  [[ $RETVAL -ne 0 ]] && echo "%{$fg_bold[red]%} ➜ "
-  [[ $RETVAL -eq 0 ]] && echo "%{$fg_bold[yellow]%} ➜ "
+  [[ $RETVAL -ne 0 ]] && echo "%{$fg_bold[red]%} $ "
+  [[ $RETVAL -eq 0 ]] && echo "%{$fg_bold[yellow]%} $ "
 }
 
 build_prompt() {
