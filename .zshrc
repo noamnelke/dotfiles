@@ -88,5 +88,26 @@ branchtodo() {
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PYTHONPATH=$PYTHONPATH:/Users/noamnelke/Projects/Tapingo
 
+# Detect and activate virtualenvs based on git repos I cd to
+function check_for_virtual_env {
+  [ -d .git ] || git rev-parse --git-dir &> /dev/null
+
+  if [ $? -eq 0 ]; then
+    local ENV_NAME=`basename \`pwd\``
+
+    if [ "${VIRTUAL_ENV##*/}" != $ENV_NAME ] && [ -e $WORKON_HOME/$ENV_NAME/bin/activate ]; then
+      workon $ENV_NAME && export CD_VIRTUAL_ENV=$ENV_NAME
+    fi
+  elif [ $CD_VIRTUAL_ENV ]; then
+    deactivate && unset CD_VIRTUAL_ENV
+  fi
+}
+
+function cd {
+  builtin cd "$@" && check_for_virtual_env
+}
+
+check_for_virtual_env
+
 # Tapingo env
 source ~/code/tapingo/noam-config/.tapingo_env
