@@ -88,7 +88,7 @@ branchtodo() {
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PYTHONPATH=$PYTHONPATH:/Users/noamnelke/Projects/Tapingo
 
-# Detect and activate virtualenvs based on git repos I cd to
+# Detect and activate virtualenvs based on content of .venv file
 function check_for_virtual_env {
   if [ -e .venv ]; then
     local virtualenv_name=`cat .venv`
@@ -101,8 +101,18 @@ function check_for_virtual_env {
   fi
 }
 
-function cd {
-  builtin cd "$@" && check_for_virtual_env
+# Support for bash
+PROMPT_COMMAND='prompt'
+
+# Mirrored support for zsh. See: https://superuser.com/questions/735660/whats-the-zsh-equivalent-of-bashs-prompt-command/735969#735969 
+precmd() { eval "$PROMPT_COMMAND" }
+
+function prompt()
+{
+    if [ "$PWD" != "$MYOLDPWD" ]; then
+        MYOLDPWD="$PWD"
+        check_for_virtual_env
+    fi
 }
 
 # Tapingo env
