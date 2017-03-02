@@ -29,15 +29,16 @@ prompt_git() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{white}%}⚙"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}[su]"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{white}%}[bg]"
 
   [[ -n "$symbols" ]] && echo -n " $symbols"
 }
 
 prompt_arrow() {
-  [[ $RETVAL -ne 0 ]] && echo "%{$fg_bold[red]%} $ "
-  [[ $RETVAL -eq 0 ]] && echo "%{$fg_bold[yellow]%} $ "
+  [[ $RETVAL -ne 0 ]] && echo -n "%{$fg_bold[red]%}"
+  [[ $RETVAL -eq 0 ]] && echo -n "%{$fg_bold[yellow]%}"
+  echo " $ %{$reset_color%}"
 }
 
 build_prompt() {
@@ -59,5 +60,5 @@ RPROMPT='$(build_rprompt)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[yellow]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%})"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
