@@ -92,11 +92,11 @@ export PYTHONPATH=$PYTHONPATH:/Users/noamnelke/Projects/Tapingo
 function check_for_virtual_env {
   if [ -e .venv ]; then
     local virtualenv_name=`cat .venv`
-    echo "$reset_color$fg[yellow]Activating virtualenv $fg[green][$virtualenv_name]$reset_color"
-    workon $virtualenv_name
+    echo "$reset_color$terminfo[bold]$fg[blue]Activating virtualenv $reset_color$fg[green][$virtualenv_name]$reset_color"
+    test `basename $VIRTUAL_ENV` != "$virtualenv_name" && workon $virtualenv_name
   elif [ $VIRTUAL_ENV ]; then
     local virtualenv_name=`basename $VIRTUAL_ENV`
-    echo "$reset_color$fg[red]Deactivating virtualenv $fg[green][$virtualenv_name]$reset_color"
+    echo "$reset_color$terminfo[bold]$fg[red]Deactivating virtualenv $reset_color$fg[green][$virtualenv_name]$reset_color"
     deactivate
   fi
 }
