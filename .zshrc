@@ -115,5 +115,8 @@ function prompt()
     fi
 }
 
+# Make less show unicode characters (especially as a pager for git where code sometimes contains non-ascii characters)
+export LESSCHARSET=utf-8
+
 # Tapingo env
 source ~/code/tapingo/noam-config/.tapingo_env
