@@ -69,7 +69,7 @@ source $ZSH/oh-my-zsh.sh
 # cd to project dirs, thanks @yonilevy
 autoload bashcompinit
 bashcompinit
-PROJECTS_HOME=$HOME/code
+PROJECTS_HOME=$HOME/code/tapingo
 _cdp_opts() {
   local cur
   cur="${COMP_WORDS[COMP_CWORD]}"
@@ -117,6 +117,11 @@ function prompt()
 
 # Make less show unicode characters (especially as a pager for git where code sometimes contains non-ascii characters)
 export LESSCHARSET=utf-8
+export PATH=$PATH:/Users/noamnelke/Library/Android/sdk/platform-tools
+
+# Golang setup
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
 
 # Tapingo env
 source ~/code/tapingo/noam-config/.tapingo_env
