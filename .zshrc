@@ -123,5 +123,8 @@ export PATH=$PATH:/Users/noamnelke/Library/Android/sdk/platform-tools
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
 
+# Enable cd-able vars (lets you alias folder names that you can then cd to)
+setopt cdablevars
+
 # Tapingo env
 source ~/code/tapingo/noam-config/.tapingo_env
