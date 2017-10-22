@@ -87,6 +87,7 @@ branchtodo() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PYTHONPATH=$PYTHONPATH:/Users/noamnelke/Projects/Tapingo
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 # Detect and activate virtualenvs based on content of .venv file
 function check_for_virtual_env {
