@@ -87,6 +87,7 @@ branchtodo() {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PYTHONPATH=$PYTHONPATH:/Users/noamnelke/Projects/Tapingo
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 # Detect and activate virtualenvs based on content of .venv file
 function check_for_virtual_env {
@@ -122,6 +123,9 @@ export PATH=$PATH:/Users/noamnelke/Library/Android/sdk/platform-tools
 # Golang setup
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
+
+# Enable cd-able vars (lets you alias folder names that you can then cd to)
+setopt cdablevars
 
 # Tapingo env
 source ~/code/tapingo/noam-config/.tapingo_env
